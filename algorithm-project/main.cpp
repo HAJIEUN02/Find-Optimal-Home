@@ -9,6 +9,7 @@
 #include "PancakeSort.h"
 #include "QuickSort.h"
 #include "ShellSort.h"
+#include "InsertionSort.h"
 
 using namespace std;
 
@@ -113,7 +114,23 @@ int main() {
             cout << "url : " << pancakeHouses[p].url << endl;
         }
 
+        // Insertion 정렬
+        cout << "-----------------삽입 정렬--------------------\n";
+        insertionSort(houses, 99);
+        cout << fixed;
+        for (int p = 0; p < count; p++) {
+            cout << p + 1 << "순위) " << "주소: " << houses[p].roadNameAddress << ", 월세+관리비: " << setprecision(0) << houses[p].monthly << "원" << ", 보증금:" << houses[p].deposit << "원" << ", 거리: " << setprecision(0) << houses[p].distance << "m" << ", 평수 : " << setprecision(2) << houses[p].size << "평" << endl;
+            cout << "url : " << houses[p].url << endl;
+        }
+
+        cout << "-----QuickSort-----" << endl;
+        cout << "비교연산 횟수: " << quickCompareCount() << ", 이동연산 횟수: " << quickMoveCount() << endl;
+        cout << "-----PanCakeSort-----" << endl;
+        cout << "비교연산 횟수: " << pancakeCompareCount() << ", 이동연산 횟수: " << pancakeMoveCount() << endl;
+        cout << "-----ShellSort-----" << endl;
         cout << "비교연산 횟수: " << shellCompareCount() << ", 이동연산 횟수: " << shellMoveCount() << endl;
+        cout << "-----InsertionSort-----" << endl;
+        cout << "비교연산 횟수: " << insertionCompareCount() << ", 이동연산 횟수: " << insertionMoveCount() << endl;
 
     }
     else {
