@@ -1,15 +1,16 @@
 #include "House.h"
 #include <vector>
 #include "PancakeSort.h"
+#include <iostream>
+
 int compare_cnt_pan = 0;
 int datamove_cnt_pan = 0;
 
 void flip(vector<House>& arr, int i) {
     int start = 0;
     while (start < i) {
-        if (arr[start].totalScore < arr[i].totalScore) {
+        if (++datamove_cnt_pan && ++datamove_cnt_pan && ++datamove_cnt_pan && arr[start].totalScore < arr[i].totalScore) {
             swap(arr[start], arr[i]);
-            datamove_cnt_pan = datamove_cnt_pan + 3;
         }
         start++;
         i--;
@@ -20,7 +21,7 @@ void flip(vector<House>& arr, int i) {
 int findMaxIndex(vector<House>& arr, int n) {
     int maxIdx = 0;
     for (int i = 0; i < n; i++) {
-        if (arr[i].totalScore > arr[maxIdx].totalScore && compare_cnt_pan++) {
+        if (++compare_cnt_pan && arr[i].totalScore > arr[maxIdx].totalScore) {
             maxIdx = i;
         }
     }
@@ -30,6 +31,10 @@ int findMaxIndex(vector<House>& arr, int n) {
 // 팬케이크 정렬 함수
 vector<House> pancakeSort(vector<House>& arr) {
     int n = arr.size();
+
+    compare_cnt_pan = 0;
+    datamove_cnt_pan = 0;
+
     for (int currSize = n; currSize > 1; currSize--) {
         int maxIndex = findMaxIndex(arr, currSize);
 
