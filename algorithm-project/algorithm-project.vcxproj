@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CalculatePoint.cpp" />
+    <ClCompile Include="InsertionSort.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PancakeSort.cpp" />
     <ClCompile Include="QuickSort.cpp" />
@@ -136,6 +137,7 @@
   <ItemGroup>
     <ClInclude Include="CalculatePoint.h" />
     <ClInclude Include="House.h" />
+    <ClInclude Include="InsertionSort.h" />
     <ClInclude Include="PancakeSort.h" />
     <ClInclude Include="QuickSort.h" />
     <ClInclude Include="ShellSort.h" />
