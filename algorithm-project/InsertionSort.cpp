@@ -8,23 +8,23 @@ int datamove_cnt_insertion = 0;
 
 void insertionSort(vector<itemType>& arr, int n) {
     int i, j;
-    float v;
+    itemType v;
 
     compare_cnt_insertion = 0;
     datamove_cnt_insertion = 0;
 
     for (i = 1; i < n; i++) {
-        v = arr[i].totalScore; 
+        v = arr[i]; 
         datamove_cnt_insertion++;
 
         j = i;
-        while (++compare_cnt_insertion && j > 0 && arr[j - 1].totalScore < v) {
+        while (++compare_cnt_insertion && j > 0 && arr[j - 1].totalScore < v.totalScore) {
             datamove_cnt_insertion++;
             arr[j] = arr[j - 1];
             j--;
         }
         
-        arr[j].totalScore = v;
+        arr[j] = v;
         datamove_cnt_insertion++;
         }
 }
